@@ -1,16 +1,24 @@
 import com.intellij.openapi.wm.ToolWindow;
+import com.intellij.ui.components.JBScrollPane;
+import models.CriticalMethod;
+import models.CriticalMethodTableModel;
+
 import javax.swing.*;
+import java.awt.*;
 import java.io.*;
 
 public class OutputToolWindow {
 
     private JButton hideToolWindowButton;
     private JPanel myToolWindowContent;
-    private JLabel OutputLabel;
+    private JTable outputTable;
+
+    private CriticalMethodTableModel tableModel;
 
     public OutputToolWindow(ToolWindow toolWindow) {
         hideToolWindowButton.addActionListener(e -> toolWindow.hide(null));
 
+        tableModel = new CriticalMethodTableModel();
         readFiloCSV();
     }
 
@@ -29,10 +37,7 @@ public class OutputToolWindow {
                     String[] data = row.split("\\|");
 
                     if(!firstLine) {
-                        // Add the MethodName
-                        outputText = outputText + "Method: " + data[1] + "<br/>";
-                        // Add the relevancy
-                        outputText = outputText + "Relevancy: " + data[2] + "<br/><br/>";
+                        tableModel.add(new CriticalMethod(data[1], data[2]));
                     }
 
                     firstLine = false;
@@ -45,11 +50,16 @@ public class OutputToolWindow {
             }
         }
 
-        OutputLabel.setText(outputText + "</html>");
+        outputTable.setModel(tableModel);
+        outputTable.getColumnModel().getColumn(0).setMaxWidth(100);
+
+        // Table Scrollbar
+        JScrollPane scrollPane = new JBScrollPane(outputTable);
+        myToolWindowContent.setLayout(new BorderLayout());
+        myToolWindowContent.add(scrollPane, BorderLayout.CENTER);
     }
 
     public JPanel getContent() {
         return myToolWindowContent;
     }
-
 }

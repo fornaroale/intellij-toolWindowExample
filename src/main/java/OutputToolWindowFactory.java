@@ -19,8 +19,6 @@ public class OutputToolWindowFactory implements ToolWindowFactory {
         ContentFactory contentFactory = ContentFactory.SERVICE.getInstance();
         Content content = contentFactory.createContent(myToolWindow.getContent(), "", false);
         toolWindow.getContentManager().addContent(content);
-
-        System.out.println("ToolWindow Factory INVOKED!");
     }
 
 }
