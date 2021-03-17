@@ -1,0 +1,14 @@
+Position |MethodName|Relevancy
+0.07692307692307693|org.asdtm.goodweather.MainActivity$1.onLocationChanged|0.92286139647996
+0.15384615384615385|org.asdtm.goodweather.MainActivity.preLoadWeather|0.03548926684022635
+0.23076923076923078|org.asdtm.goodweather.MainActivity.gpsRequestLocation|0.033260908538201316
+0.3076923076923077|org.asdtm.goodweather.MainActivity.onOptionsItemSelected|0.032771817076402636
+0.38461538461538464|org.asdtm.goodweather.MainActivity.onResume|0.032663316289148356
+0.46153846153846156|org.asdtm.goodweather.BaseActivity.configureNavView|0.022771778103418707
+0.5384615384615384|org.asdtm.goodweather.utils.AppPreference.getLastUpdateTimeMillis|0.021159426785352393
+0.6153846153846154|org.asdtm.goodweather.BaseActivity.setupNavDrawer|0.0205616396713798
+0.6923076923076923|org.asdtm.goodweather.BaseActivity.onPostCreate|0.020416757603629165
+0.7692307692307693|org.asdtm.goodweather.utils.AppPreference.getCityAndCode|0.01985507895926544
+0.8461538461538461|org.asdtm.goodweather.MainActivity.onCreate|0.01896743027733175
+0.9230769230769231|org.asdtm.goodweather.BaseActivity.setContentView|0.01855073113317848
+1.0|org.asdtm.goodweather.MainActivity.onPause|0.01771743027733175

@@ -1,0 +1,27 @@
+<idea-plugin>
+    <id>it.fornaroale.toolWindowExample</id>
+    <name>Plugin display name here</name>
+    <vendor email="fornaroale@outlook.com" url="https://github.com/fornaroale">fornaroale</vendor>
+
+    <description><![CDATA[
+      <ul>
+        <li><b>0.1</b> First version of ToolWindow sample. Declarative implementation.</li>
+      </ul>
+    ]]></description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="FILO ToolWindow" factoryClass="OutputToolWindowFactory" anchor="null" doNotActivateOnStart="true"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="ShowToolWindowAction" class="ShowToolWindowAction" text="Show ToolWindow"
+                description="ToolWindow activation example">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+    </actions>
+</idea-plugin>
