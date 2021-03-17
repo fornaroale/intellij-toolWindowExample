@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>it.fornaroale.toolWindowExample</id>
-    <name>Plugin display name here</name>
+    <name>ToolWindow Implementation Example</name>
     <vendor email="fornaroale@outlook.com" url="https://github.com/fornaroale">fornaroale</vendor>
 
     <description><![CDATA[
@@ -14,7 +14,7 @@
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow id="FILO ToolWindow" factoryClass="OutputToolWindowFactory" anchor="null" doNotActivateOnStart="true"/>
+        <toolWindow id="FILO ToolWindow" factoryClass="OutputToolWindowFactory" anchor="right" doNotActivateOnStart="true"/>
     </extensions>
 
     <actions>
